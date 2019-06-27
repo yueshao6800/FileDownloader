@@ -57,6 +57,7 @@ import java.util.List;
 public class NoDatabaseImpl implements FileDownloadDatabase {
 
     final SparseArray<FileDownloadModel> downloaderModelMap = new SparseArray<>();
+    //这里可能会有线程安全问题
     final SparseArray<List<ConnectionModel>> connectionModelListMap = new SparseArray<>();
 
     public NoDatabaseImpl() {
